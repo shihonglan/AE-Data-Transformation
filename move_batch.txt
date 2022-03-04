@@ -1,0 +1,43 @@
+Sub move_batch()
+'pptx to rtf
+Dim sEveryFile As String
+
+Dim sSourcePath As String
+
+Dim sNewSavePath As String
+
+Dim CurDoc As Object
+
+sSourcePath = "D:\xx-vocabulary\Y4T2\Week 13 (Lets Solve it 2!) Unit 61 to unit 65\pic\"
+
+sEveryFile = Dir(sSourcePath & "*.pptx")
+
+Do While sEveryFile <> ""
+
+    
+    
+    Set pptInput = Presentations.Open(sEveryFile)
+    pptInput.Slides(1).Delete
+    m = pptInput.Slides.Count
+    pptInput.Slides(6).MoveTo toPos:=1
+    pptInput.Slides(7).MoveTo toPos:=2
+    pptInput.Slides(8).MoveTo toPos:=3
+    pptInput.Slides(9).MoveTo toPos:=4
+    pptInput.Slides(10).MoveTo toPos:=5
+    
+    Do Until m = 10
+     pptInput.Slides(m).Delete
+     m = m - 1
+    Loop
+    pptInput.Save
+    sNewSavePath = VBA.Strings.Replace(sEveryFile, ".pptx", ".rtf")
+    
+    pptInput.SaveAs sNewSavePath, ppSaveAsRTF
+    pptInput.Close
+
+sEveryFile = Dir
+
+Loop
+
+'Set CurDoc = Nothing
+End Sub

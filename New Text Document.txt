@@ -1,0 +1,45 @@
+Sub move()
+
+
+'On Error Resume Next
+
+'Path = "D:\????"
+
+fname1 = "D:\xx-vocabulary\Y5T2\Week 15 (The Animal Kingdom 2) Unit 71 to unit 75\5.pptx"
+
+fname2 = "D:\xx-vocabulary\Y5T2\Week 15 (The Animal Kingdom 2) Unit 71 to unit 75\55.pptx"
+
+'Set pptOutput = Presentations.Open(fname2)
+
+'Set newSlide = pptOutput.Slides.Add(1, ppLayoutBlank)
+
+'Set app = CreateObject("powerpoint.application")
+
+'app.Visible = True
+
+Set pptInput = Presentations.Open(fname1)
+
+'For i = 2 To 11
+
+'pptInput.Slides(i).Copy
+
+'pptOutput.Slides.Paste (pptOutput.Slides.Count)
+
+'Next
+
+'m = pptOutput.Slides.Count
+
+'pptOutput.Slides(m).Delete
+pptInput.Slides(1).Delete
+pptInput.Slides(1).MoveTo toPos:=6
+
+
+pptInput.save
+pptInput.Close
+
+'pptOutput.Save
+
+'pptOutput.Close
+
+
+End Sub

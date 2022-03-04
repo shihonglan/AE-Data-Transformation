@@ -1,0 +1,39 @@
+Sub rtf2txt()
+'rtf to txt
+Dim sEveryFile As String
+
+Dim sSourcePath As String
+
+Dim sNewSavePath As String
+
+Dim CurDoc As Object
+
+sSourcePath = "D:\xx-vocabulary\Y5T2\Week 14 (The Animal Kingdom 1) unit 66 to unit 70\pic\"
+
+sEveryFile = Dir(sSourcePath & "*.rtf")
+
+Do While sEveryFile <> ""
+
+Set CurDoc = Documents.Open(sSourcePath & sEveryFile, , , , , , , , , , , msoFalse)
+
+sNewSavePath = VBA.Strings.Replace(sSourcePath & sEveryFile, ".rtf", ".txt")
+'MsgBox sNewSavePath
+
+'CurDoc.SaveAs2 sNewSavePath
+CurDoc.SaveAs sNewSavePath, wdFormatText
+
+
+CurDoc.Close SaveChanges:=False
+
+sEveryFile = Dir
+
+Loop
+
+Set CurDoc = Nothing
+
+
+
+
+
+
+End Sub

@@ -1,0 +1,281 @@
+Sub COPY()
+'
+' COPY Macro
+'
+' Keyboard Shortcut: Ctrl+Shift+E
+'
+    ActiveCell.Select
+    a = ActiveCell.Row
+    b = ActiveCell.Column
+    Range("D9:E9").Select
+    Application.CutCopyMode = False
+    Selection.COPY
+    Worksheets("Dic").Cells(a, b).Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+    Range("F9:G9").Select
+    Application.CutCopyMode = False
+    Selection.COPY
+    a = a + 1
+    Worksheets("Dic").Cells(a, b).Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+       
+    Range("H9:I9").Select
+    Application.CutCopyMode = False
+    Selection.COPY
+    a = a + 1
+    Worksheets("Dic").Cells(a, b).Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+
+    Range("J9:K9").Select
+    Application.CutCopyMode = False
+    Selection.COPY
+    a = a + 1
+    Worksheets("Dic").Cells(a, b).Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+        
+    Range("L9:M9").Select
+    Application.CutCopyMode = False
+    Selection.COPY
+    a = a + 1
+    Worksheets("Dic").Cells(a, b).Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+End Sub
+Sub Macro4()
+'
+' Macro4 Macro
+'
+
+'
+ '   Range("D9:E9").Select
+  '  Selection.COPY
+  '  Range("A78").Select
+   ' Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+   '     :=False, Transpose:=False
+End Sub
+Sub geshi()
+'
+' geshi Macro
+'
+' Keyboard Shortcut: Ctrl+q
+'
+    Range("D12:H12").Select
+    Selection.COPY
+    Range("D7").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+    Range("I12:M12").Select
+    Selection.COPY
+    Range("D8").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+End Sub
+Sub GESHITRANS1()
+'
+' GESHITRANS1 Macro
+'
+' Keyboard Shortcut: Ctrl+e
+    Worksheets("M1").Select
+    Range("D1").Select
+    a = ActiveCell.Row
+    b = ActiveCell.Column
+    Worksheets("M1").Cells(a, b).Value = ""
+    
+    Range("D6:H6").Select
+    Application.CutCopyMode = False
+    Selection.COPY
+    Worksheets("M1").Cells(a, b).Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+    Range("I6:M6").Select
+    Application.CutCopyMode = False
+    Selection.COPY
+    a = a + 1
+    Worksheets("M1").Cells(a, b).Value = ""
+    Worksheets("M1").Cells(a, b).Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+    Range("N6:R6").Select
+    Application.CutCopyMode = False
+    Selection.COPY
+    a = a + 1
+    Worksheets("M1").Cells(a, b).Value = ""
+    Worksheets("M1").Cells(a, b).Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+    Range("S6:W6").Select
+    Application.CutCopyMode = False
+    Selection.COPY
+    a = a + 1
+    Worksheets("M1").Cells(a, b).Value = ""
+    Worksheets("M1").Cells(a, b).Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+    Range("X6:AB6").Select
+    Application.CutCopyMode = False
+    Selection.COPY
+    a = a + 1
+    Worksheets("M1").Cells(a, b).Value = ""
+    Worksheets("M1").Cells(a, b).Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+End Sub
+Sub L5toL10()
+'
+' L5toL10 Macro
+'
+' Keyboard Shortcut: Ctrl+d
+'
+    Worksheets("M2").Select
+    Range("A1").Select
+    a = ActiveCell.Row
+    b = ActiveCell.Column
+    Check = True: Counter = 0    ' Initialize variables.
+    
+    
+    A1 = "": B1 = "": C1 = "": D1 = ""
+    
+    aa = 0
+    bb = 0
+    cc = 0
+    
+    
+    Do    ' Outer loop.
+
+        Counter = Counter + 1    ' Increment Counter.
+        If Worksheets("M2").Cells(a, b).Value = "" Then
+            Check = False    ' Set value of flag to False.
+            Exit Do    ' Exit inner loop.
+        End If
+        a = a + 1
+    Loop Until Check = False
+    
+    Range("E1:H5").Select
+    Range("E1:H5").Select
+    Selection.Value = ""
+
+    aaa1 = 1
+    bbb1 = 3
+    aaa2 = 8
+    bbb2 = 3
+  For I = 1 To 5
+    MyValue = Int((Counter * Rnd) + 1)    ' Generate random value between 1 and 6.
+
+
+    'd1,e1,f1,g1
+    'TMP1 = Range("C1").Value
+    TMP1 = Worksheets("M2").Cells(aaa1, bbb1).Value
+    'INDEX1 = Switch(TMP1 = "A", 1, TMP1 = "B", 2, TMP1 = "C", 3, TMP1 = "D", 4)
+        aa = 0
+        bb = 0
+        cc = 0
+    A1 = "": B1 = "": C1 = "": D1 = ""
+    If TMP1 = "A" Then
+        'A1 = Range("C8").Value
+        A1 = Worksheets("M2").Cells(aaa2, bbb2).Value
+        MyValue = Int((Counter * Rnd) + 1)    ' Generate random value between 1 and 6.
+        aa = MyValue
+        MyValue = Int((Counter * Rnd) + 1)    ' Generate random value between 1 and 6.
+        If aa = MyValue Then
+           MyValue = Int((Counter * Rnd) + 1)    ' Generate random value between 1 and 6.
+        Else
+            bb = MyValue
+        End If
+        MyValue = Int((Counter * Rnd) + 1)    ' Generate random value between 1 and 6.
+        If aa = MyValue Or bb = MyValue Then
+           MyValue = Int((Counter * Rnd) + 1)    ' Generate random value between 1 and 6.
+        Else
+            cc = MyValue
+        End If
+        B1 = Worksheets("M2").Cells(aa, 1).Value
+        C1 = Worksheets("M2").Cells(bb, 1).Value
+        D1 = Worksheets("M2").Cells(cc, 1).Value
+        Range("D1").Value = A1
+        Range("E1").Value = B1
+        Range("F1").Value = C1
+        Range("G1").Value = D1
+    End If
+    If TMP1 = "B" Then
+        B1 = Worksheets("M2").Cells(aaa2, bbb2).Value
+        MyValue = Int((Counter * Rnd) + 1)    ' Generate random value between 1 and 6.
+        aa = MyValue
+        MyValue = Int((Counter * Rnd) + 1)    ' Generate random value between 1 and 6.
+        If aa = MyValue Then
+           MyValue = Int((Counter * Rnd) + 1)    ' Generate random value between 1 and 6.
+        Else
+            bb = MyValue
+        End If
+        MyValue = Int((Counter * Rnd) + 1)    ' Generate random value between 1 and 6.
+        If aa = MyValue Or bb = MyValue Then
+           MyValue = Int((Counter * Rnd) + 1)    ' Generate random value between 1 and 6.
+        Else
+            cc = MyValue
+        End If
+        A1 = Worksheets("M2").Cells(aa, 1).Value
+        C1 = Worksheets("M2").Cells(bb, 1).Value
+        D1 = Worksheets("M2").Cells(cc, 1).Value
+    End If
+    If TMP1 = "C" Then
+        C1 = Worksheets("M2").Cells(aaa2, bbb2).Value
+        MyValue = Int((Counter * Rnd) + 1)    ' Generate random value between 1 and 6.
+        aa = MyValue
+        MyValue = Int((Counter * Rnd) + 1)    ' Generate random value between 1 and 6.
+        If aa = MyValue Then
+           MyValue = Int((Counter * Rnd) + 1)    ' Generate random value between 1 and 6.
+        Else
+            bb = MyValue
+        End If
+        MyValue = Int((Counter * Rnd) + 1)    ' Generate random value between 1 and 6.
+        If aa = MyValue Or bb = MyValue Then
+           MyValue = Int((Counter * Rnd) + 1)    ' Generate random value between 1 and 6.
+        Else
+            cc = MyValue
+        End If
+        A1 = Worksheets("M2").Cells(aa, 1).Value
+        B1 = Worksheets("M2").Cells(bb, 1).Value
+        D1 = Worksheets("M2").Cells(cc, 1).Value
+    End If
+    If TMP1 = "D" Then
+        D1 = Worksheets("M2").Cells(aaa2, bbb2).Value
+        MyValue = Int((Counter * Rnd) + 1)    ' Generate random value between 1 and 6.
+        aa = MyValue
+        MyValue = Int((Counter * Rnd) + 1)    ' Generate random value between 1 and 6.
+        If aa = MyValue Then
+           MyValue = Int((Counter * Rnd) + 1)    ' Generate random value between 1 and 6.
+        Else
+            bb = MyValue
+        End If
+        MyValue = Int((Counter * Rnd) + 1)    ' Generate random value between 1 and 6.
+        If aa = MyValue Or bb = MyValue Then
+           MyValue = Int((Counter * Rnd) + 1)    ' Generate random value between 1 and 6.
+        Else
+            cc = MyValue
+        End If
+        A1 = Worksheets("M2").Cells(aa, 1).Value
+        B1 = Worksheets("M2").Cells(bb, 1).Value
+        C1 = Worksheets("M2").Cells(cc, 1).Value
+    End If
+    'Range("D1").Value = A1
+    'Range("E1").Value = B1
+    'Range("F1").Value = C1
+    'Range("G1").Value = D1
+    Worksheets("M2").Cells(aaa1, bbb1 + 1).Value = A1
+    Worksheets("M2").Cells(aaa1, bbb1 + 2).Value = B1
+    Worksheets("M2").Cells(aaa1, bbb1 + 3).Value = C1
+    Worksheets("M2").Cells(aaa1, bbb1 + 4).Value = D1
+    aaa1 = aaa1 + 1
+    aaa2 = aaa2 + 1
+  Next I
+End Sub
